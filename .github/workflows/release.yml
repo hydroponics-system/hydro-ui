@@ -1,0 +1,29 @@
+name: Release Version
+on:
+  workflow_run:
+    workflows: ['Build Development']
+    types: [completed]
+    
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create Tag and Release
+        id: versionBump
+        uses: hydroponics-system/version-release@v1.5.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.versionBump.outputs.tag }}
+          release_name: ${{ steps.versionBump.outputs.release_name }}
+          body: ${{ steps.versionBump.outputs.body }}
+          draft: false
+          prerelease: false
