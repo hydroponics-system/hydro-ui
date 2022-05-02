@@ -1,0 +1,111 @@
+form {
+  padding: 0 2em;
+  margin-bottom: 0;
+}
+
+.row > h2 {
+  color: #1e90ff;
+}
+
+.flex-one {
+  flex: 1;
+}
+
+.login-button {
+  padding: 4px 10px;
+  font-size: 1rem;
+}
+
+.main-content {
+  width: 50%;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  margin: 8em auto;
+  display: flex;
+}
+
+.company__info {
+  background-color: #1e90ff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.sign-in-label {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.text-label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+  padding-left: 0 !important;
+}
+
+.link-text {
+  font-size: 14px;
+}
+
+.company-title {
+  font-weight: bold;
+
+  &.medium {
+    font-size: 18px;
+  }
+
+  &.large {
+    font-size: 25px;
+  }
+}
+
+.login_form {
+  background-color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.logo {
+  margin: 2em auto;
+  display: block;
+  text-indent: -9999px;
+  width: 200px;
+  height: 182px;
+  background: url(../../../../projects/insite-kit/src/assets/images/logo.svg)
+    no-repeat;
+  background-size: 200px 182px;
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 767px) {
+  .main-content {
+    width: 90%;
+  }
+  .company__info {
+    display: none;
+  }
+
+  .login_form {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+}
+
+@media screen and (min-width: 642px) and (max-width: 1100px) {
+  .main-content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .logo {
+    width: 150px !important;
+    height: 132px !important;
+    background-size: 150px 132px !important;
+  }
+}
