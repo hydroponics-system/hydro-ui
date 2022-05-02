@@ -13,7 +13,7 @@ app.get("/*", function (req, res) {
 
 // Start the app by listening on the default Heroku port
 
-const profile = process.env?.ENV ? process.env?.ENV : "local";
+let profile = process.env?.ENV ? process.env?.ENV : "local";
 if (profile === "prod") {
   profile = "PRODUCTION";
 } else if (profile === "dev") {
