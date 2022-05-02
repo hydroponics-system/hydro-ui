@@ -190,7 +190,7 @@
 
 .btn-primary {
   @include btn-variant(
-    #1e88e5,
+    #007fe5,
     #64b5f6,
     #42a5f5,
     #bbdefb,
@@ -200,29 +200,29 @@
   );
 
   &.btn-flat {
-    @include btn-flat(#1e88e5, #64b5f6, #42a5f5, #bbdefb, #e3f2fd, #90caf9);
+    @include btn-flat(#007fe5, #64b5f6, #42a5f5, #bbdefb, #e3f2fd, #90caf9);
   }
 
   &.btn-round {
     @include btn-round(
-      #1e88e5,
-      #64b5f6,
-      #42a5f5,
+      #007fe5,
+      #239cff,
+      #007fe5,
       #bbdefb,
       #e3f2fd,
-      #90caf9,
+      #6cb9f8,
       transparent
     );
 
     &__swap {
       @include btn-round(
         #ffffff,
-        #1e88e5,
+        #007fe5,
         #ffffff,
         #ffffff,
-        #1e88e5,
+        #007fe5,
         #c9e4fd,
-        #1e88e5
+        #007fe5
       );
     }
   }
