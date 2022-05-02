@@ -1,1 +1,53 @@
-<div>Base login page</div>
+<div class="login-container">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="login-title">Hydropnics Control</div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="inputcontainer">
+          <fa-icon [icon]="usernameIcon" class="icon"></fa-icon>
+          <input
+            type="email"
+            formControlName="username"
+            class="login-input"
+            placeholder="Email"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="inputcontainer">
+          <fa-icon [icon]="passwordIcon" class="icon"></fa-icon>
+          <input
+            type="password"
+            formControlName="password"
+            class="login-input"
+            placeholder="Password"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a routerLink="#" class="left forgot-password-text">Forgot Password?</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-round btn-primary login-button">
+          Login
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="create-account-text">
+          Don't have an account?
+          <a routerLink="#" class="link-text">Register Here!</a>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>

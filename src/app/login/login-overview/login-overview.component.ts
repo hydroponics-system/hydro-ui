@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UrlService } from 'projects/insite-kit/src/service/url-service/url.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login-overview',
@@ -7,9 +9,20 @@ import { UrlService } from 'projects/insite-kit/src/service/url-service/url.serv
   styleUrls: ['./login-overview.component.scss'],
 })
 export class LoginOverviewComponent implements OnInit {
-  constructor(private readonly urlService: UrlService) {}
+  form: FormGroup;
+  usernameIcon = faUser;
+  passwordIcon = faLock;
 
-  ngOnInit(): void {
-    console.log(this.urlService.getAPIUrl());
+  constructor(private readonly fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.buildForm();
+  }
+
+  buildForm() {
+    this.form = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
 }
