@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class LoadingIndicatorComponent {
   @Input() size = '110px';
   @Input() thickness = '8px';
+  @Input() type: 'default' | 'ellipsis' = 'default';
 }

@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-import { WebRole } from 'projects/insite-kit/src/models/common.model';
 import { PasswordUpdate } from 'projects/insite-kit/src/models/password-update.model';
-import {
-  Application,
-  User,
-  UserStatus,
-} from 'projects/insite-kit/src/models/user.model';
+import { User } from 'projects/insite-kit/src/models/user.model';
 import { CommonService } from 'projects/insite-kit/src/service/common/common.service';
 import { JwtService } from 'projects/insite-kit/src/service/jwt-service/jwt.service';
 import { RequestService } from 'projects/insite-kit/src/service/request-service/request.service';
@@ -63,18 +58,6 @@ export class UserService {
    */
   getUserById(id: number): Observable<User> {
     return this.request.get<User>(`${this.BASE_USER_PATH}/${id.toString()}`);
-  }
-
-  /**
-   * Gets the users applications that they have access too for the given user id.
-   *
-   * @param id The id of the user to get applications for.
-   * @returns List of Application object
-   */
-  getUserAppsById(id: number): Observable<Application[]> {
-    return this.request.get<Application[]>(
-      `${this.BASE_USER_PATH}/${id}/application-access`
-    );
   }
 
   /**
@@ -191,23 +174,6 @@ export class UserService {
   }
 
   /**
-   * This will update the user status of the user.
-   *
-   * @param userId The user to be updated.
-   * @param status The status to update the user too.
-   * @returns The user object that needs returned.
-   */
-  updateUserStatus(
-    userId: number,
-    dataStatus: UserStatus
-  ): Observable<UserStatus> {
-    return this.request.put<UserStatus>(
-      `${this.BASE_USER_STATUS_PATH}/${userId}`,
-      dataStatus
-    );
-  }
-
-  /**
    * This will reset the users password for the given password update object.
    *
    * @param passUpdate The password update object the password needs to be.
@@ -227,119 +193,5 @@ export class UserService {
    */
   deleteUser(id: number): Observable<any> {
     return this.request.delete<any>(`${this.BASE_USER_PATH}/${id}`);
-  }
-
-  /**
-   * Checks to see if the given user id has access to the application.
-   *
-   * @param id The user id to check.
-   * @returns Boolean if the user has app access or not.
-   */
-  hasAppAccess(id: number): Observable<boolean> {
-    return this.getUserById(id).pipe(map((res) => res.appAccess));
-  }
-
-  /**
-   * This will get what users the user is able to see.
-   */
-  getUserAccessMap() {
-    const userRole: number = Number(WebRole[this.jwt.get('webRole')]);
-
-    // CORPORATE_USER, SITE_ADMIN, ADMIN
-    if ([2, 8, 9].includes(userRole)) {
-      return new Map<string, string[]>().set(
-        'excludedUserIds',
-        this.jwt.get('userId')
-      );
-    }
-
-    // CUSTOMER_SERVICE_MANAGER, ASSISTANT_MANAGER, STORE_MANAGER
-    if ([3, 4, 5].includes(userRole)) {
-      return new Map<string, string[]>()
-        .set('storeId', this.jwt.get('storeId'))
-        .set('excludedUserIds', this.jwt.get('userId'))
-        .set('accountStatus', ['APPROVED']);
-    }
-
-    //DISTRICT_MANAGER, REGIONAL
-    if ([6, 7].includes(userRole)) {
-      return new Map<string, string[]>()
-        .set('regionalId', this.jwt.get('userId'))
-        .set('excludedUserIds', this.jwt.get('userId'))
-        .set('accountStatus', ['APPROVED']);
-    }
-
-    // EMPLOYEE and other
-    return new Map<string, string[]>().set('userId', [this.jwt.get('userId')]);
-  }
-
-  /**
-   * Helper method to determine if the currently logged in user is able to edit the current web role.
-   *
-   * @param editableUserRole The role to check if editable.
-   * @returns Boolean based on if the user can edit the role or not.
-   */
-  canEditUser(editableUserRole: WebRole): boolean {
-    const userRole: number = Number(WebRole[this.jwt.get('webRole')]);
-
-    // MANAGER editing an EMPLOYEE
-    if (5 === userRole && Number(WebRole[editableUserRole]) === 1) {
-      return true;
-    }
-
-    // DISTRICT_MANAGER or REGIONAL editing user with role of STORE_MANAGER or lower
-    if ([6, 7].includes(userRole) && Number(WebRole[editableUserRole]) < 6) {
-      return true;
-    }
-
-    // SITE_ADMIN
-    if (8 === userRole && Number(WebRole[editableUserRole]) < 8) {
-      return true;
-    }
-
-    // ADMIN can edit anyone, but themselves
-    if (9 === userRole && Number(WebRole[editableUserRole]) < 9) {
-      return true;
-    }
-
-    //EMPLOYEE or other can't edit anyone
-    return false;
-  }
-
-  /**
-   * Helper method to determine if the currently logged in user is able to edit the current web role.
-   *
-   * @param editableUserRole The role to check if editable.
-   * @returns Boolean based on if the user can edit the role or not.
-   */
-  getAllowedRolesToCreate(): string[] {
-    const userRole: number = Number(WebRole[this.jwt.get('webRole')]);
-
-    // STORE_MANAGER editing an EMPLOYEE
-    if (5 === userRole) {
-      return [WebRole[WebRole.EMPLOYEE].toString()];
-    }
-
-    // DISTRICT_MANAGER or REGIONAL editing user with role of STORE_MANAGER or lower
-    if ([6, 7].includes(userRole)) {
-      return [
-        WebRole[WebRole.ASSISTANT_MANAGER].toString(),
-        WebRole[WebRole.CUSTOMER_SERVICE_MANAGER].toString(),
-        WebRole[WebRole.STORE_MANAGER].toString(),
-        WebRole[WebRole.EMPLOYEE].toString(),
-      ];
-    }
-
-    // SITE_ADMIN and ADMIN can edit anyone
-    if ([8, 9].includes(userRole)) {
-      return Object.keys(WebRole)
-        .map((key) => WebRole[key])
-        .filter(
-          (value) => typeof value === 'string' && WebRole[value] < userRole
-        ) as string[];
-    }
-
-    //EMPLOYEE or other can edit anyone
-    return [];
   }
 }

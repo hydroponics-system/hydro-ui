@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { default as applicationsJson } from 'projects/insite-kit/src/assets/translations/applications/en.json';
 import { default as webRolesJson } from 'projects/insite-kit/src/assets/translations/web-roles/en.json';
 
 @Injectable({
@@ -32,25 +31,6 @@ export class CommonService {
     const year = dateValue.getFullYear();
 
     return `${month}/${day}/${year}`;
-  }
-
-  getApplicationList(apps: any[]) {
-    const applications = [];
-    const translations = Object.values(applicationsJson)[0];
-
-    if (apps.length <= 0) {
-      return [];
-    }
-
-    if (apps[0].name) {
-      apps
-        .filter((v) => v.access)
-        .forEach((v) => applications.push(translations[v.name ? v.name : v]));
-    } else {
-      apps.forEach((v) => applications.push(translations[v.name ? v.name : v]));
-    }
-
-    return applications;
   }
 
   getFormattedRole(value: string) {

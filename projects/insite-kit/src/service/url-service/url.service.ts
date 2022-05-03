@@ -30,6 +30,7 @@ export class UrlService {
    * @returns The url for the api web socket.
    */
   getSocketAPIUrl() {
+    console.log('Socket called');
     if (environment.isLocal) {
       return `ws://${environment.apiUrl}/api/websocket`;
     } else {

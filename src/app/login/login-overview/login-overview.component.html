@@ -36,7 +36,11 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <button class="btn btn-round btn-primary login-button">
+        <button
+          class="btn btn-round btn-primary login-button"
+          (click)="onLoginClick()"
+          *ngIf="!loading; else loader"
+        >
           Login
         </button>
       </div>
@@ -51,3 +55,7 @@
     </div>
   </form>
 </div>
+
+<ng-template #loader>
+  <ik-loading-indicator type="ellipsis"></ik-loading-indicator>
+</ng-template>
