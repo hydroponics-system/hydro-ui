@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { JwtModule } from '@auth0/angular-jwt';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppPageComponent } from './components/app-page/app-page.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { CardHeaderComponent } from './components/card-header/card-header.component';
@@ -26,9 +27,8 @@ import { ModalBodyComponent } from './components/modal/modal-body/modal-body.com
 import { ModalHeaderComponent } from './components/modal/modal-header/modal-header.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { AppNavbarComponent } from './components/navbar/app-navbar/app-navbar.component';
-import { HomeImageComponent } from './components/navbar/home-navbar/home-image/home-image.component';
-import { HomeNavbarComponent } from './components/navbar/home-navbar/home-navbar.component';
 import { NotificationMessageComponent } from './components/notification-message/notification-message.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UsernamePipe } from './service/pipe/format-user-name.pipe';
 import { NotificationMessagePipe } from './service/pipe/notification-message.pipe';
 import { WebRoleTranslationPipe } from './service/pipe/web-role-translation.pipe';
@@ -41,7 +41,6 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppPageComponent,
-    HomeNavbarComponent,
     AppNavbarComponent,
     GridComponent,
     GridColumnComponent,
@@ -51,7 +50,6 @@ export function tokenGetter() {
     CardComponent,
     CardInfoComponent,
     LoadingIndicatorComponent,
-    HomeImageComponent,
     CardHeaderComponent,
     IconComponent,
     UsernamePipe,
@@ -70,6 +68,7 @@ export function tokenGetter() {
     NotificationMessageComponent,
     NotificationMessagePipe,
     HeaderBackComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,9 +79,9 @@ export function tokenGetter() {
         tokenGetter: tokenGetter,
       },
     }),
+    FontAwesomeModule,
   ],
   exports: [
-    HomeNavbarComponent,
     AppNavbarComponent,
     AppPageComponent,
     GridComponent,
@@ -93,7 +92,6 @@ export function tokenGetter() {
     CardComponent,
     CardInfoComponent,
     LoadingIndicatorComponent,
-    HomeImageComponent,
     CardHeaderComponent,
     IconComponent,
     UsernamePipe,
@@ -112,6 +110,8 @@ export function tokenGetter() {
     NotificationMessageComponent,
     NotificationMessagePipe,
     HeaderBackComponent,
+    FontAwesomeModule,
+    SidebarComponent,
   ],
   entryComponents: [ModalComponent, NotificationMessageComponent],
   providers: [StompWebSocketService],

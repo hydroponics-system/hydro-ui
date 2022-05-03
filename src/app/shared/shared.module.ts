@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
 import { InsiteKitModule } from 'projects/insite-kit/src/insite-kit.module';
 import { BasicAuthHtppInterceptorService } from 'projects/insite-kit/src/service/http-interceptor/basic-auth-htpp-interceptor.service';
@@ -19,7 +18,6 @@ import { AppRoutingModule } from '../app-routing.module';
     InsiteKitModule,
     BrowserAnimationsModule,
     FormsModule,
-    FontAwesomeModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
@@ -35,7 +33,6 @@ import { AppRoutingModule } from '../app-routing.module';
     FormsModule,
     ReactiveFormsModule,
     ToastrModule,
-    FontAwesomeModule,
   ],
   providers: [
     {

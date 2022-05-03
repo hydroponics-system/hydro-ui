@@ -2,7 +2,7 @@
   min-height: 50px;
   height: 80px;
   border: 1px solid transparent;
-  background: #f6f6f6;
+  background: #4151FD;
   position: fixed;
   width: 100%;
   overflow: hidden;
@@ -11,53 +11,39 @@
 }
 
 .app-title {
-  font-size: 60px;
-  color: #178bff;
-  font-weight: 700;
+  font-size: 40px;
+  color: white;
+  font-weight: 600;
   text-align: left;
-  height: 74px;
+  height: auto;
   float: left;
-  margin-left: 10px;
-  margin-top: -6px;
+  margin-left: 40px;
+  margin-top: 9px;
   cursor: pointer;
 }
 
-.home {
-  content: url(../../../assets/images/nav-icons/home-icon.png);
-  height: 40px;
-  width: 40px;
+.nav-icons {
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
   float: left;
   margin-top: 16px;
-  margin-right: 5px;
-  margin-left: 5px;
-  color: white;
   cursor: pointer;
-  transition: transform 0.5s; /* Animation */
-}
+  transition: all 0.5s ease-in-out;
 
-.profile {
-  content: url(../../../assets/images/nav-icons/profile-icon.jpg);
-  height: 50px;
-  width: 50px;
-  float: right;
-  margin-top: 14px;
-  margin-right: 5px;
-  cursor: pointer;
-  color: black;
-  transition: transform 0.5s; /* Animation */
-}
-
-.bell {
-  position: relative;
-  display: block;
-  height: 40px;
-  width: 40px;
-  float: right;
-  margin-top: 19px;
-  margin-right: 5px;
-  background: url(../../../assets/images/nav-icons/notification-bell.png);
-  background-size: contain;
-  cursor: pointer;
+  &__left {
+    @extend .nav-icons;
+    float: left;
+    margin-left: 15px;
+    color: #fff;
+  }
+  
+  &__right {
+    @extend .nav-icons;
+    float: right;
+    margin-right: 15px;
+    color: #929dff;
+  }
 }
 
 .bell-num {
@@ -153,18 +139,6 @@
     width: 30px !important;
     margin-top: 24px !important;
   }
-
-  .profile {
-    height: 40px !important;
-    width: 40px !important;
-    margin-top: 22px !important;
-  }
-
-  .bell {
-    height: 30px !important;
-    width: 30px !important;
-    margin-top: 27px !important;
-  }
 }
 
 @media screen and (max-width: 520px) {
@@ -194,18 +168,6 @@
     margin-top: 26px !important;
   }
 
-  .profile {
-    height: 40px !important;
-    width: 40px !important;
-    margin-top: 18px !important;
-  }
-
-  .bell {
-    height: 30px !important;
-    width: 30px !important;
-    margin-top: 23px !important;
-  }
-
   .app-navbar {
     height: 70px !important;
   }
@@ -220,18 +182,6 @@
   .home {
     height: 20px !important;
     width: 20px !important;
-    margin-top: 22px !important;
-  }
-
-  .profile {
-    height: 32px !important;
-    width: 32px !important;
-    margin-top: 17px !important;
-  }
-
-  .bell {
-    height: 22px !important;
-    width: 22px !important;
     margin-top: 22px !important;
   }
 

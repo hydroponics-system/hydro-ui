@@ -1,5 +1,18 @@
-import { Component, Inject, Input, ViewContainerRef } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  Input,
+  Output,
+  ViewContainerRef,
+} from '@angular/core';
 import { Router } from '@angular/router';
+import {
+  faBars,
+  faBell,
+  faClose,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
 import { JwtService } from 'projects/insite-kit/src/service/jwt-service/jwt.service';
 import { NotificationMessageService } from 'projects/insite-kit/src/service/notification-message/notification-message.service';
 import { NotificationService } from 'projects/insite-kit/src/service/notification/notification.service';
@@ -12,6 +25,13 @@ import { BaseNavbarComponent } from '../base-navbar/base-navbar.component';
 })
 export class AppNavbarComponent extends BaseNavbarComponent {
   @Input() appName: string;
+  @Input() sideBarOpen: boolean = false;
+  @Output() menuClick = new EventEmitter<any>();
+
+  menuIcon = faBars;
+  notificationBellIcon = faBell;
+  profileIcon = faUser;
+  closeIcon = faClose;
 
   constructor(
     router: Router,
@@ -29,5 +49,23 @@ export class AppNavbarComponent extends BaseNavbarComponent {
       notificationMessageService,
       viewContainerRef
     );
+  }
+
+  onMenuClick() {
+    console.log('Menu Clicked');
+    this.menuClick.emit();
+  }
+
+  onBellClick() {
+    this.router.navigate(['/notification']);
+  }
+
+  onProfileClick() {
+    this.router.navigate(['/profile']);
+  }
+
+  onLogOutClick() {
+    this.jwt.logOut();
+    this.stompService.deactivate();
   }
 }

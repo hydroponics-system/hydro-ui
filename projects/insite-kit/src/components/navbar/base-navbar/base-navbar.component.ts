@@ -3,6 +3,7 @@ import {
   Inject,
   OnDestroy,
   OnInit,
+  ViewChild,
   ViewContainerRef,
 } from '@angular/core';
 import { Router } from '@angular/router';
@@ -17,11 +18,14 @@ import { NotificationService } from 'projects/insite-kit/src/service/notificatio
 import { StompWebSocketService } from 'projects/insite-kit/src/service/stomp/stomp-websocket.service';
 import { Subject } from 'rxjs';
 import { switchMap, takeUntil, tap } from 'rxjs/operators';
+import { SidebarComponent } from '../../sidebar/sidebar.component';
 @Component({
   selector: 'ik-app-navbar',
   template: '',
 })
 export class BaseNavbarComponent implements OnInit, OnDestroy {
+  @ViewChild('sideBarNav') sideBar: SidebarComponent;
+
   notificationCount = 0;
   destroy = new Subject();
 
@@ -30,11 +34,11 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
   notificationAccess: boolean;
 
   constructor(
-    private readonly router: Router,
-    private readonly notificationService: NotificationService,
-    private readonly jwt: JwtService,
-    private readonly stompService: StompWebSocketService,
-    private readonly notificationMessageService: NotificationMessageService,
+    protected readonly router: Router,
+    protected readonly notificationService: NotificationService,
+    protected readonly jwt: JwtService,
+    protected readonly stompService: StompWebSocketService,
+    protected readonly notificationMessageService: NotificationMessageService,
     @Inject(ViewContainerRef) viewContainerRef
   ) {
     notificationMessageService.setRootViewContainerRef(viewContainerRef);
@@ -48,26 +52,6 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.destroy.next();
-  }
-
-  onLogoClick() {
-    this.router.navigate(['/home']);
-  }
-
-  onWaffleClick() {
-    this.router.navigate(['home']);
-  }
-
-  onBellClick() {
-    this.router.navigate(['/notification']);
-  }
-  onProfileClick() {
-    this.router.navigate(['/profile']);
-  }
-
-  onLogOutClick() {
-    this.jwt.logOut();
-    this.stompService.deactivate();
   }
 
   getNotifications(params?: Map<string, string[]>) {

@@ -1,7 +1,13 @@
 <nav class="app-navbar">
-  <div class="home inline-block" (click)="onWaffleClick()"></div>
+  <fa-icon
+    class="nav-icons__left"
+    [icon]="sideBarOpen ? closeIcon : menuIcon"
+    (click)="onMenuClick()"
+  ></fa-icon>
   <div class="app-title inline-block">{{ appName }}</div>
-  <div
+  <fa-icon class="nav-icons__right" [icon]="profileIcon"></fa-icon>
+  <fa-icon class="nav-icons__right" [icon]="notificationBellIcon"></fa-icon>
+  <!-- <div
     class="dropdown"
     *featureAccess="[Application.GLOBAL, Feature.PROFILE, Access.READ]"
   >
@@ -15,5 +21,5 @@
     <span class="bell-num" *ngIf="notificationCount > 0">{{
       notificationCount
     }}</span>
-  </div>
+  </div> -->
 </nav>
