@@ -5,7 +5,11 @@
     (click)="onMenuClick()"
   ></fa-icon>
   <div class="app-title inline-block">{{ appName }}</div>
-  <fa-icon class="nav-icons__right" [icon]="profileIcon"></fa-icon>
+  <fa-icon
+    class="nav-icons__right"
+    [icon]="profileIcon"
+    (click)="onProfileClick()"
+  ></fa-icon>
   <fa-icon class="nav-icons__right" [icon]="notificationBellIcon"></fa-icon>
   <!-- <div
     class="dropdown"

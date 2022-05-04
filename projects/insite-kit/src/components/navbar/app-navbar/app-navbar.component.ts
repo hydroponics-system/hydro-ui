@@ -61,7 +61,8 @@ export class AppNavbarComponent extends BaseNavbarComponent {
   }
 
   onProfileClick() {
-    this.router.navigate(['/profile']);
+    // this.router.navigate(['/profile']);
+    this.jwt.logOut();
   }
 
   onLogOutClick() {
