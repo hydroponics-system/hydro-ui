@@ -1,5 +1,15 @@
 import { Component } from '@angular/core';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faCircleInfo,
+  faClose,
+  faEnvelope,
+  faGear,
+  faGears,
+  faHome,
+  faScrewdriverWrench,
+  faUsers,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'ik-sidebar',
@@ -10,6 +20,14 @@ export class SidebarComponent {
   isOpen = false;
 
   closeIcon = faClose;
+  homeIcon = faHome;
+  serviceIcon = faScrewdriverWrench;
+  aboutIcon = faCircleInfo;
+  contactIcon = faEnvelope;
+  systemIcon = faGears;
+  usersIcon = faUsers;
+  gitIcon = faGithub;
+  settingsIcon = faGear;
 
   open() {
     document.getElementById('sideBarNav').style.width = '250px';

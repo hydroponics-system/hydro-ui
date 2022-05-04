@@ -2,12 +2,12 @@
   min-height: 50px;
   height: 80px;
   border: 1px solid transparent;
-  background: #4151FD;
+  background: #222B45;
   position: fixed;
   width: 100%;
   overflow: hidden;
   z-index: 1000;
-  box-shadow: 5px 5px 20px grey;
+  box-shadow: 0 0.5rem 1rem 0 #1a1f33;
 }
 
 .app-title {
@@ -128,27 +128,11 @@
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 555px) {
   .app-title {
-    font-size: 50px;
-    margin-top: 2px;
-  }
-
-  .home {
-    height: 30px !important;
-    width: 30px !important;
-    margin-top: 24px !important;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  .app-title {
-    font-size: 40px;
-    margin-top: 11px;
-  }
-
-  .home {
-    margin-right: 0 !important;
+    font-size: 28px;
+    margin-top: 18px;
+    margin-left: 24px;
   }
 
   .app-navbar {
@@ -158,14 +142,14 @@
 
 @media screen and (max-width: 440px) {
   .app-title {
-    font-size: 31px;
-    margin-top: 18px;
+    font-size: 22px;
+    margin-top: 21px;
+    margin-left: 16px;
   }
 
-  .home {
-    height: 25px !important;
-    width: 25px !important;
-    margin-top: 26px !important;
+  .nav-icons {
+    font-size: 24px;
+    margin-top: 20px;
   }
 
   .app-navbar {
@@ -173,16 +157,20 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 365px) {
   .app-title {
-    font-size: 25px;
-    margin-top: 14px;
+    font-size: 16px;
+    margin-top: 24px;
+    margin-left: 16px;
   }
 
-  .home {
-    height: 20px !important;
-    width: 20px !important;
-    margin-top: 22px !important;
+  .nav-icons {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .nav-icons__right {
+    margin-right: 8px;
   }
 
   .bell-num {
