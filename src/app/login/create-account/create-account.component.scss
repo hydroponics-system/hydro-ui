@@ -18,6 +18,11 @@
   color: white;
   font-weight: 600;
   transition: all 0.5s ease;
+
+  &__small {
+    @extend .login-input;
+    width: 90%;
+  }
 }
 
 .login-title {
@@ -86,5 +91,9 @@
   .login-container {
     width: 95%;
     margin: 10em auto;
+  }
+
+  .login-input__small {
+    width: 95%;
   }
 }

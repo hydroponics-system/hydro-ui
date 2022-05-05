@@ -12,8 +12,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve": "ng serve",
-    "serve:prod": "ng serve --live-reload --configuration prod",
     "serve:dev": "ng serve --live-reload --configuration dev",
     "serve:local": "ng serve --live-reload --configuration local",
     "heroku-postbuild": "ng build --configuration ${ENV}",

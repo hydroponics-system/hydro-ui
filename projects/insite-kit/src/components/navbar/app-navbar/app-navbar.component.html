@@ -11,19 +11,4 @@
     (click)="onProfileClick()"
   ></fa-icon>
   <fa-icon class="nav-icons__right" [icon]="notificationBellIcon"></fa-icon>
-  <!-- <div
-    class="dropdown"
-    *featureAccess="[Application.GLOBAL, Feature.PROFILE, Access.READ]"
-  >
-    <div class="profile inline-block"></div>
-    <div class="dropdown-content">
-      <div (click)="onProfileClick()">Profile</div>
-      <div (click)="onLogOutClick()">Log Out</div>
-    </div>
-  </div>
-  <div class="bell" (click)="onBellClick()" *ngIf="notificationAccess">
-    <span class="bell-num" *ngIf="notificationCount > 0">{{
-      notificationCount
-    }}</span>
-  </div> -->
 </nav>
