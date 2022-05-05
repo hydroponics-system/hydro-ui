@@ -17,6 +17,8 @@ export class NotificationMessagePipe implements PipeTransform {
   determineMessage(type: NotificationType) {
     if (type === NotificationType.USER) {
       return 'New User Request';
+    } else if (type === NotificationType.SYSTEM_UPDATE) {
+      return 'Change to System Settings';
     } else {
       return 'New Request';
     }

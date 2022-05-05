@@ -13,7 +13,7 @@ import { STOMP_SOCKET_CONFIG } from './stomp.config';
   providedIn: 'root',
 })
 export class StompWebSocketService extends RxStomp {
-  private readonly SOCKET_URL = '/topic/notifications';
+  private readonly SOCKET_URL = '/topic/update-system';
 
   activeUser: User;
 
@@ -43,11 +43,7 @@ export class StompWebSocketService extends RxStomp {
    */
   listen(destination?: string): Observable<Notification> {
     return super
-      .watch(
-        `${
-          destination ? destination : this.SOCKET_URL
-        }/${this.jwt.getRequiredUserId()}`
-      )
+      .watch(`${destination ? destination : this.SOCKET_URL}`)
       .pipe(map((res: Message) => JSON.parse(res.body)));
   }
 }

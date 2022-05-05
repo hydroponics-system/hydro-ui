@@ -4,7 +4,7 @@
     [sideBarOpen]="sideBar.isOpen"
     (menuClick)="sideBar.toggle()"
   ></ik-app-navbar>
-  <div class="app-container">
+  <div class="app-container flex-one">
     <ik-sidebar #sideBar></ik-sidebar>
     <ng-content></ng-content>
   </div>

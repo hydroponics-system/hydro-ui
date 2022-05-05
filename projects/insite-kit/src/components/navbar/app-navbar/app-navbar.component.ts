@@ -52,7 +52,6 @@ export class AppNavbarComponent extends BaseNavbarComponent {
   }
 
   onMenuClick() {
-    console.log('Menu Clicked');
     this.menuClick.emit();
   }
 

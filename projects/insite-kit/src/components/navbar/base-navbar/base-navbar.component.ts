@@ -45,9 +45,9 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    // this.stompService.init();
-    // this.notificationUpdates();
-    // this.listenToWebSocket();
+    this.stompService.init();
+    this.notificationUpdates();
+    this.listenToWebSocket();
   }
 
   ngOnDestroy() {

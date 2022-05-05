@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ToastrModule } from 'ngx-toastr';
 import { InsiteKitModule } from 'projects/insite-kit/src/insite-kit.module';
 import { BasicAuthHtppInterceptorService } from 'projects/insite-kit/src/service/http-interceptor/basic-auth-htpp-interceptor.service';
@@ -17,6 +18,7 @@ import { AppRoutingModule } from '../app-routing.module';
     HttpClientModule,
     InsiteKitModule,
     BrowserAnimationsModule,
+    NgxChartsModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
@@ -33,6 +35,7 @@ import { AppRoutingModule } from '../app-routing.module';
     FormsModule,
     ReactiveFormsModule,
     ToastrModule,
+    NgxChartsModule,
   ],
   providers: [
     {

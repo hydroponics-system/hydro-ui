@@ -9,4 +9,5 @@ export interface Notification {
 
 export enum NotificationType {
   USER = 'USER',
+  SYSTEM_UPDATE = 'SYSTEM_UPDATE',
 }

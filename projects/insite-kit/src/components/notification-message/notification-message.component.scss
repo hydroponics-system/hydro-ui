@@ -2,7 +2,7 @@
   height: auto;
   width: auto;
   border-radius: 15px;
-  background: linear-gradient(to bottom, #ffffff 12%, #fffff5 100%);
+  background: #222B45;
   cursor: pointer;
   box-shadow: 0 2px 5px #0006;
   padding: 15px 10px;
@@ -21,6 +21,7 @@
   float: left;
   font-weight: 700;
   display: block;
+  color: white;
 }
 
 .message {
@@ -29,6 +30,7 @@
   word-wrap: break-word;
   text-align: left;
   margin-top: 5px;
+  color: white;
 }
 
 .notification-overall {
