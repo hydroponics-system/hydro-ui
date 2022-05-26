@@ -1,10 +1,13 @@
 # Admin devs will be put on all pull request
-*                           @hydroponics-system/admin-dev 
+*              @hydroponics-system/admin-dev 
 
 # UI dev will own html, ts, and scss files.
-/src/                       @hydroponics-system/ui-dev
+*.html         @hydroponics-system/ui-dev
+*.ts           @hydroponics-system/ui-dev
+*.scss         @hydroponics-system/ui-dev
+*.json         @hydroponics-system/ui-dev
 
 # Require devops approval for any files dealing with the github actions or properties files.
-.* @hydroponics-system/devops-dev
-LICENSE.md  @hydroponics-system/devops-dev
-CODEOWNERS.md @hydroponics-system/devops-dev
+.*             @hydroponics-system/devops-dev
+LICENSE.md     @hydroponics-system/devops-dev
+CODEOWNERS.md  @hydroponics-system/devops-dev
