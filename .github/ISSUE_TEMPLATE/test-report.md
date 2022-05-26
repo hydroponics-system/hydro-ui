@@ -2,7 +2,7 @@
 name: Test Report
 about: Adding test functionality to service
 title: ''
-labels: ''
+labels: Test
 assignees: ''
 
 ---

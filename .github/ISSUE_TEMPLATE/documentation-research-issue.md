@@ -2,7 +2,7 @@
 name: Documentation/Research Issue
 about: Create a research issue for looking into a new feature or bug
 title: ''
-labels: ''
+labels: Documentation
 assignees: ''
 
 ---
