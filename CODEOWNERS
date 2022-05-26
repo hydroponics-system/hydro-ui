@@ -5,4 +5,4 @@
 /src/                       @hydroponics-system/ui-dev
 
 # Require devops approval for any files dealing with the github actions or properties files.
-.* LICENSE.md CODEOWNERS.md @hydroponics-system/devops-dev
+.* /LICENSE.md /CODEOWNERS.md @hydroponics-system/devops-dev
