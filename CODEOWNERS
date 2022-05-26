@@ -5,4 +5,4 @@
 *.html *.ts *.scss *.json @hydroponics-system/ui-dev
 
 # Require devops approval for any files dealing with the github actions or properties files.
-.* CODEOWNERS LICENSE     @hydroponics-system/devops-dev
+.* /CODEOWNERS LICENSE     @hydroponics-system/devops-dev
