@@ -2,7 +2,7 @@
 *                         @hydroponics-system/admin-dev 
 
 # UI dev will own html, ts, and scss files.
-*.html *.ts *.scss *.json @hydroponics-system/ui-dev
+/src/ @hydroponics-system/ui-dev
 
 # Require devops approval for any files dealing with the github actions or properties files.
 .* LICENSE     @hydroponics-system/devops-dev
