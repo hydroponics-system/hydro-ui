@@ -6,4 +6,4 @@
 
 # Require devops approval for any files dealing with the github actions or properties files.
 .* LICENSE     @hydroponics-system/devops-dev
-CODEOWNERS @hydroponics-system/devops-dev
+CODEOWNERS     @hydroponics-system/devops-dev
