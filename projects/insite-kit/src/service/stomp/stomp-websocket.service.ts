@@ -13,7 +13,7 @@ import { STOMP_SOCKET_CONFIG } from './stomp.config';
   providedIn: 'root',
 })
 export class StompWebSocketService extends RxStomp {
-  private readonly SOCKET_URL = '/topic/update-system';
+  private readonly SOCKET_URL = '/topic/notification';
 
   activeUser: User;
 

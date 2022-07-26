@@ -32,9 +32,9 @@ export class UrlService {
   getSocketAPIUrl() {
     console.log('Socket called');
     if (environment.isLocal) {
-      return `ws://${environment.apiUrl}/api/websocket`;
+      return `ws://${environment.apiUrl}/api/subscription`;
     } else {
-      return `wss://${environment.apiUrl}/api/websocket`;
+      return `wss://${environment.apiUrl}/api/subscription`;
     }
   }
 }
