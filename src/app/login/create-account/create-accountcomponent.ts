@@ -22,6 +22,7 @@ export class CreateAccountComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.loading = false;
     this.buildForm();
   }
 

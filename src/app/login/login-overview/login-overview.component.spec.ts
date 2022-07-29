@@ -52,6 +52,7 @@ describe('LoginOverviewComponent', () => {
       password: 'testPassword',
     });
 
+    fixture.detectChanges();
     TestDOM.click('#loginButton');
 
     expect(authService.authenticate).toHaveBeenCalledWith(

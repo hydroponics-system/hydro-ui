@@ -1,11 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { setupTests } from 'projects/insite-kit/src/service/test/test-setup';
+import { of, throwError } from 'rxjs';
+import { UserService } from 'src/service/user-service/user.service';
 import { HydroTestBed } from 'src/test/test-bed';
+import { TestData } from 'src/test/test-data';
+import { TestDOM } from 'src/test/test-dom';
 import { CreateAccountComponent } from './create-accountcomponent';
 
 describe('CreateAccountComponent', () => {
   let component: CreateAccountComponent;
   let fixture: ComponentFixture<CreateAccountComponent>;
+  let userService;
+  let router;
+  let toastService;
 
   setupTests(async () => HydroTestBed.setup());
 
@@ -13,10 +22,70 @@ describe('CreateAccountComponent', () => {
     fixture = TestBed.createComponent(CreateAccountComponent);
     component = fixture.componentInstance;
 
+    userService = TestBed.inject(UserService);
+    router = TestBed.inject(Router);
+    toastService = TestBed.inject(ToastrService);
+
+    spyOn(userService, 'createUser').and.returnValue(of(TestData.getUser()[0]));
+    spyOn(router, 'navigate');
+    spyOn(toastService, 'error');
+    spyOn(toastService, 'success');
+
     fixture.detectChanges();
   });
 
   it('should create the component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should build form', () => {
+    expect(component.form).toBeDefined();
+    expect(component.form.value.firstName).toEqual('');
+    expect(component.form.value.lastName).toEqual('');
+    expect(component.form.value.email).toEqual('');
+    expect(component.form.value.password).toEqual('');
+  });
+
+  it('should successfully create a user account', () => {
+    TestDOM.updateForm('#createAccountForm', {
+      firstName: 'Test',
+      lastName: 'Admin',
+      email: 'Test@Admin.com',
+      password: 'newPassword',
+    });
+
+    fixture.detectChanges();
+    TestDOM.click('#createAccountButton');
+
+    expect(userService.createUser).toHaveBeenCalledWith({
+      firstName: 'Test',
+      lastName: 'Admin',
+      email: 'Test@Admin.com',
+      password: 'newPassword',
+    });
+    expect(router.navigate).toHaveBeenCalledWith(['/login']);
+    expect(toastService.success).toHaveBeenCalledWith(
+      'Account successfully created!'
+    );
+    expect(component.loading).toBeFalsy();
+  });
+
+  it('should error for creating user and show error message', () => {
+    userService.createUser.and.returnValue(throwError(of('INVALID')));
+    TestDOM.updateForm('#createAccountForm', {
+      firstName: 'ERROR',
+      lastName: 'ERROR',
+      email: 'ERROR',
+      password: 'ERROR',
+    });
+
+    fixture.detectChanges();
+    TestDOM.click('#createAccountButton');
+
+    expect(router.navigate).toHaveBeenCalledWith(['/login']);
+    expect(toastService.error).toHaveBeenCalledWith(
+      'Could not create account at this time. Try again later.'
+    );
+    expect(component.loading).toBeFalsy();
   });
 });
