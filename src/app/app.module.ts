@@ -5,8 +5,8 @@ import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 @NgModule({
-  declarations: [AppComponent],
   imports: [SharedModule, LoginModule, HomeModule],
+  declarations: [AppComponent],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
 })

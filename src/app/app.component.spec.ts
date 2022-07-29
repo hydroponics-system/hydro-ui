@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { setupTests } from 'projects/insite-kit/src/service/test/test-setup';
 import { HydroTestBed } from 'src/test-bed';
-import { CreateAccountComponent } from './create-accountcomponent';
+import { AppComponent } from './app.component';
 
-describe('CreateAccountComponent', () => {
-  let component: CreateAccountComponent;
-  let fixture: ComponentFixture<CreateAccountComponent>;
+describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
 
   setupTests(async () => HydroTestBed.setup());
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateAccountComponent);
+    fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
 
     fixture.detectChanges();

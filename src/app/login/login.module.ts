@@ -5,11 +5,11 @@ import { LoginOverviewComponent } from './login-overview/login-overview.componen
 import { LoginComponent } from './login.component';
 
 @NgModule({
+  imports: [SharedModule],
   declarations: [
     LoginComponent,
     LoginOverviewComponent,
     CreateAccountComponent,
   ],
-  imports: [SharedModule],
 })
 export class LoginModule {}

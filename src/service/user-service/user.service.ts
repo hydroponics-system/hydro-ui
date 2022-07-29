@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { PasswordUpdate } from 'projects/insite-kit/src/models/password-update.model';
 import { User } from 'projects/insite-kit/src/models/user.model';
 import { CommonService } from 'projects/insite-kit/src/service/common/common.service';
-import { JwtService } from 'projects/insite-kit/src/service/jwt-service/jwt.service';
 import { RequestService } from 'projects/insite-kit/src/service/request-service/request.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -16,7 +15,6 @@ export class UserService {
 
   constructor(
     private readonly request: RequestService,
-    private readonly jwt: JwtService,
     private readonly commonService: CommonService
   ) {}
 
