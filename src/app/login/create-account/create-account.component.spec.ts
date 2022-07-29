@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { setupTests } from 'projects/insite-kit/src/service/test/test-setup';
-import { HydroTestBed } from 'src/test-bed';
+import { HydroTestBed } from 'src/test/test-bed';
 import { CreateAccountComponent } from './create-accountcomponent';
 
 describe('CreateAccountComponent', () => {

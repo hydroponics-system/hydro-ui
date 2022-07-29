@@ -4,7 +4,6 @@ import { User } from 'projects/insite-kit/src/models/user.model';
 import { CommonService } from 'projects/insite-kit/src/service/common/common.service';
 import { RequestService } from 'projects/insite-kit/src/service/request-service/request.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -25,17 +24,7 @@ export class UserService {
    * @returns User object
    */
   getUsers(params?: Map<string, string[]>): Observable<User[]> {
-    return this.request.get<User[]>(this.BASE_USER_PATH, params).pipe(
-      map((v) =>
-        v.map((i) => {
-          return {
-            ...i,
-            formattedRole: this.commonService.getFormattedRole(i.webRole),
-            formattedName: this.commonService.getFormattedName(i),
-          };
-        })
-      )
-    );
+    return this.request.get<User[]>(this.BASE_USER_PATH, params);
   }
 
   /**
