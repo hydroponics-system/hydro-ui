@@ -1,6 +1,8 @@
 export enum WebRole {
   USER = 1,
-  ADMIN = 2,
+  SYSTEM_USER = 2,
+  DEVELOPER = 3,
+  ADMIN = 4,
 }
 
 export enum Access {

@@ -11,9 +11,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class UserService {
-  readonly BASE_USER_PATH = 'api/user-app/user-profile';
-  readonly BASE_USER_STATUS_PATH = 'api/user-app/user-status';
-  readonly BASE_USER_CREDENTIALS_PATH = 'api/user-app/user-credentials';
+  readonly BASE_USER_PATH = 'api/user-app/profile';
+  readonly BASE_USER_CREDENTIALS_PATH = 'api/user-app/credentials';
 
   constructor(
     private readonly request: RequestService,
@@ -61,16 +60,6 @@ export class UserService {
   }
 
   /**
-   * This will get the User object of the regional that is in charge of that store.
-   *
-   * @param storeId The store id to get the regional for.
-   * @returns User object of the regional.
-   */
-  getRegionalOfStoreById(storeId: string): Observable<User> {
-    return this.request.get<User>(`${this.BASE_USER_PATH}/regional/${storeId}`);
-  }
-
-  /**
    * This will check to see if the email exists already. Used to see if a user can create
    * an account with the email they have chosen.
    *
@@ -91,30 +80,6 @@ export class UserService {
    */
   createUser(user: User): Observable<User> {
     return this.request.post<User>(this.BASE_USER_PATH, user);
-  }
-
-  /**
-   * This will create a user for the given object.
-   *
-   * @param user The user to be created.
-   * @returns The user that was created.
-   */
-  addUser(user: User): Observable<User> {
-    return this.request.post<User>(`${this.BASE_USER_PATH}/add-user`, user);
-  }
-
-  /**
-   * This will send a forgot password link to the user for the given email so that
-   * they can reset their password.
-   *
-   * @param email The email that needs to have the password reset
-   * @returns User object of the user that is being reset, if exists.
-   */
-  forgotPassword(email: string): Observable<User> {
-    return this.request.post<User>(
-      `${this.BASE_USER_PATH}/forgot-password`,
-      email
-    );
   }
 
   /**
