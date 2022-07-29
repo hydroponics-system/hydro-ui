@@ -22,4 +22,7 @@ jobs:
           node-version: 16.14.0
     - name: npm dependencies
       run: npm install   
-    - run: npm run build --if-present
+    - name: Run Build 
+      run: npm run build --if-present
+    - name: Run Test
+      run: npm run test:headless 
