@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ToastrModule } from 'ngx-toastr';
 import { InsiteKitModule } from 'projects/insite-kit/src/insite-kit.module';
-import { BasicAuthHtppInterceptorService } from 'projects/insite-kit/src/service/http-interceptor/basic-auth-htpp-interceptor.service';
+import { BasicHttpInterceptorService } from 'projects/insite-kit/src/service/auth/http-interceptor.service';
 import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
@@ -40,7 +40,7 @@ import { AppRoutingModule } from '../app-routing.module';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: BasicAuthHtppInterceptorService,
+      useClass: BasicHttpInterceptorService,
       multi: true,
     },
   ],

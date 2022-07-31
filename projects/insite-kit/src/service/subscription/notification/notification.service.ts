@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { RequestService } from 'projects/insite-kit/src/service/request-service/request.service';
+import { RequestService } from 'projects/insite-kit/src/service/request/request.service';
 import { Observable, Subject } from 'rxjs';
-import { Notification } from '../../models/notification.model';
+import { Notification } from '../../../models/notification.model';
 
 @Injectable({
   providedIn: 'root',

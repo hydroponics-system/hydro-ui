@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { PasswordUpdate } from 'projects/insite-kit/src/models/password-update.model';
 import { User } from 'projects/insite-kit/src/models/user.model';
-import { RequestService } from 'projects/insite-kit/src/service/request-service/request.service';
-import { setupTests } from 'projects/insite-kit/src/service/test/test-setup';
+import { RequestService } from 'projects/insite-kit/src/service/request/request.service';
+import { setupTests } from 'projects/insite-kit/src/test/test-setup';
 import { HydroTestBed } from 'src/test/test-bed';
 import { UserService } from './user.service';
 

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { PasswordUpdate } from 'projects/insite-kit/src/models/password-update.model';
 import { User } from 'projects/insite-kit/src/models/user.model';
 import { CommonService } from 'projects/insite-kit/src/service/common/common.service';
-import { RequestService } from 'projects/insite-kit/src/service/request-service/request.service';
+import { RequestService } from 'projects/insite-kit/src/service/request/request.service';
 import { Observable } from 'rxjs';
 
 @Injectable({

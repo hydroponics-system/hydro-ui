@@ -1,6 +1,6 @@
 import { ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
-import { NotificationMessageComponent } from '../../components/notification-message/notification-message.component';
-import { Notification } from '../../models/notification.model';
+import { NotificationMessageComponent } from '../../../components/notification-message/notification-message.component';
+import { Notification } from '../../../models/notification.model';
 
 @Injectable({
   providedIn: 'root',

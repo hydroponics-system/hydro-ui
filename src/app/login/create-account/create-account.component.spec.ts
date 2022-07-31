@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { setupTests } from 'projects/insite-kit/src/service/test/test-setup';
+import { setupTests } from 'projects/insite-kit/src/test/test-setup';
 import { of, throwError } from 'rxjs';
 import { UserService } from 'src/service/user-service/user.service';
 import { HydroTestBed } from 'src/test/test-bed';

@@ -5,7 +5,7 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { NotificationMessageService } from '../../service/notification-message/notification-message.service';
+import { NotificationMessageService } from '../../service/subscription/notification/notification-message.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({

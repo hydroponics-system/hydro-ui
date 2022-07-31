@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
-import { AuthService } from 'projects/insite-kit/src/service/auth-service/auth.service';
+import { AuthService } from 'projects/insite-kit/src/service/auth/auth.service';
 
 @Component({
   selector: 'app-login-overview',

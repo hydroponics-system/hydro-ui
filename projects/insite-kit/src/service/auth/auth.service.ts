@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AuthToken } from '../../models/auth-token.model';
-import { JwtService } from '../jwt-service/jwt.service';
-import { RequestService } from '../request-service/request.service';
+import { RequestService } from '../request/request.service';
+import { JwtService } from './jwt.service';
 
 @Injectable({
   providedIn: 'root',

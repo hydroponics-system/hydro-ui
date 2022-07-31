@@ -5,8 +5,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppPageComponent } from './components/app-page/app-page.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { CardHeaderComponent } from './components/card-header/card-header.component';
-import { CardInfoComponent } from './components/card-info/card-info.component';
+import { CardHeaderComponent } from './components/card/card-header/card-header.component';
+import { CardInfoComponent } from './components/card/card-info/card-info.component';
 import { CardComponent } from './components/card/card.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { AppFooterComponent } from './components/footer/app-footer.component';
@@ -32,7 +32,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UsernamePipe } from './service/pipe/format-user-name.pipe';
 import { NotificationMessagePipe } from './service/pipe/notification-message.pipe';
 import { WebRoleTranslationPipe } from './service/pipe/web-role-translation.pipe';
-import { StompWebSocketService } from './service/stomp/stomp-websocket.service';
+import { StompWebSocketService } from './service/subscription/subscription.service';
 
 export function tokenGetter() {
   return localStorage.getItem('token');

@@ -18,7 +18,9 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "jwt-decode"
+              "jwt-decode",
+              "angular2-uuid",
+              "clone-deep"
             ],
             "outputPath": "dist/hydroponics-app",
             "index": "src/index.html",
@@ -37,7 +39,6 @@
               "src/styles/style.scss",
               "src/styles/input.scss",
               "src/styles/button.scss",
-              "src/styles/loading.scss",
               "src/styles/utility.scss"
             ],
             "scripts": [
@@ -212,6 +213,5 @@
         }
       }
     }
-  },
-  "defaultProject": "hydroponics-app"
+  }
 }

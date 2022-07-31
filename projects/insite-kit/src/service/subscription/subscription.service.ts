@@ -5,7 +5,7 @@ import { Notification } from 'projects/insite-kit/src/models/notification.model'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../../models/user.model';
-import { JwtService } from '../jwt-service/jwt.service';
+import { JwtService } from '../auth/jwt.service';
 import { UrlService } from '../url-service/url.service';
 import { STOMP_SOCKET_CONFIG } from './stomp.config';
 

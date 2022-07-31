@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class BasicAuthHtppInterceptorService implements HttpInterceptor {
+export class BasicHttpInterceptorService implements HttpInterceptor {
   constructor() {}
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     if (localStorage.getItem('token')) {

@@ -13,10 +13,10 @@ import {
   faClose,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
-import { JwtService } from 'projects/insite-kit/src/service/jwt-service/jwt.service';
-import { NotificationMessageService } from 'projects/insite-kit/src/service/notification-message/notification-message.service';
-import { NotificationService } from 'projects/insite-kit/src/service/notification/notification.service';
-import { StompWebSocketService } from 'projects/insite-kit/src/service/stomp/stomp-websocket.service';
+import { JwtService } from 'projects/insite-kit/src/service/auth/jwt.service';
+import { NotificationMessageService } from 'projects/insite-kit/src/service/subscription/notification/notification-message.service';
+import { NotificationService } from 'projects/insite-kit/src/service/subscription/notification/notification.service';
+import { StompWebSocketService } from 'projects/insite-kit/src/service/subscription/subscription.service';
 import { BaseNavbarComponent } from '../base-navbar/base-navbar.component';
 @Component({
   selector: 'ik-app-navbar',
