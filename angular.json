@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "preserveSymlinks": true,
             "allowedCommonJsDependencies": [
               "jwt-decode",
               "angular2-uuid",
@@ -36,10 +37,8 @@
               "./node_modules/angular-calendar/css/angular-calendar.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-toastr/toastr.css",
-              "src/styles/style.scss",
-              "src/styles/input.scss",
-              "src/styles/button.scss",
-              "src/styles/utility.scss"
+              "./node_modules/insite-kit-temp/assets/styles.css",
+              "src/styles/style.scss"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",

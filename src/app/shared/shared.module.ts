@@ -1,13 +1,14 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { InsiteKitModule } from 'insite-kit-temp';
 import { ToastrModule } from 'ngx-toastr';
-import { InsiteKitModule } from 'projects/insite-kit/src/insite-kit.module';
-import { BasicHttpInterceptorService } from 'projects/insite-kit/src/service/auth/http-interceptor.service';
+import { DeprecatedInsiteKitModule } from 'projects/insite-kit/src/deprecated-insite-kit.module';
+import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
@@ -16,33 +17,25 @@ import { AppRoutingModule } from '../app-routing.module';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    InsiteKitModule,
     BrowserAnimationsModule,
     NgxChartsModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot({
-      positionClass: 'toast-top-right',
-    }),
+    InsiteKitModule.forRoot(environment),
+    DeprecatedInsiteKitModule,
   ],
   exports: [
     BrowserModule,
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    InsiteKitModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule,
     NgxChartsModule,
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: BasicHttpInterceptorService,
-      multi: true,
-    },
+    InsiteKitModule,
+    DeprecatedInsiteKitModule,
   ],
 })
 export class SharedModule {}

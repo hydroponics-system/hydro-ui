@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
+import { RequestService } from 'insite-kit-temp';
 import { PasswordUpdate } from 'projects/insite-kit/src/models/password-update.model';
 import { User } from 'projects/insite-kit/src/models/user.model';
-import { CommonService } from 'projects/insite-kit/src/service/common/common.service';
-import { RequestService } from 'projects/insite-kit/src/service/request/request.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,10 +11,7 @@ export class UserService {
   readonly BASE_USER_PATH = 'api/user-app/profile';
   readonly BASE_USER_CREDENTIALS_PATH = 'api/user-app/credentials';
 
-  constructor(
-    private readonly request: RequestService,
-    private readonly commonService: CommonService
-  ) {}
+  constructor(private readonly request: RequestService) {}
 
   /**
    * Get a list of users based on the given request

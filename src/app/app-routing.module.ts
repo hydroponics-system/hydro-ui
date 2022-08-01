@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '../../projects/insite-kit/src/service/auth/auth.guard';
+import { AuthGuard } from 'insite-kit-temp';
 import { HomeComponent } from './home/home.component';
 import { CreateAccountComponent } from './login/create-account/create-accountcomponent';
 import { LoginOverviewComponent } from './login/login-overview/login-overview.component';
