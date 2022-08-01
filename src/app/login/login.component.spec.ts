@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { setupTests } from 'projects/insite-kit/src/test/test-setup';
 import { HydroTestBed } from 'src/test/test-bed';
+import { setupTests } from 'src/test/test-setup';
 import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {

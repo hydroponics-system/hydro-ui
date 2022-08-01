@@ -1,5 +1,5 @@
 import { TestModuleMetadata } from '@angular/core/testing';
-import { AbstractTestBed } from 'projects/insite-kit/src/test/abstract-test-bed';
+import { AbstractTestBed } from 'insite-kit-temp';
 import { AppComponent } from 'src/app/app.component';
 import { HomeModule } from 'src/app/home/home.module';
 import { LoginModule } from 'src/app/login/login.module';

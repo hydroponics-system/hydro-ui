@@ -2,11 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { AuthService } from 'insite-kit-temp';
 import { ToastrService } from 'ngx-toastr';
-import { setupTests } from 'projects/insite-kit/src/test/test-setup';
 import { of, throwError } from 'rxjs';
 import { HydroTestBed } from 'src/test/test-bed';
 import { TestData } from 'src/test/test-data';
 import { TestDOM } from 'src/test/test-dom';
+import { setupTests } from 'src/test/test-setup';
 import { LoginOverviewComponent } from './login-overview.component';
 
 describe('LoginOverviewComponent', () => {

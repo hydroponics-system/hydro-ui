@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { JwtService } from 'insite-kit-temp';
-import { setupTests } from 'projects/insite-kit/src/test/test-setup';
 import { HydroTestBed } from 'src/test/test-bed';
+import { setupTests } from 'src/test/test-setup';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
