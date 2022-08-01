@@ -4,10 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { InsiteKitModule } from 'insite-kit-temp';
 import { ToastrModule } from 'ngx-toastr';
-import { DeprecatedInsiteKitModule } from 'projects/insite-kit/src/deprecated-insite-kit.module';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from '../app-routing.module';
 
@@ -18,11 +18,11 @@ import { AppRoutingModule } from '../app-routing.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
     NgxChartsModule,
     FormsModule,
     ReactiveFormsModule,
     InsiteKitModule.forRoot(environment),
-    DeprecatedInsiteKitModule,
   ],
   exports: [
     BrowserModule,
@@ -34,8 +34,8 @@ import { AppRoutingModule } from '../app-routing.module';
     ReactiveFormsModule,
     ToastrModule,
     NgxChartsModule,
+    FontAwesomeModule,
     InsiteKitModule,
-    DeprecatedInsiteKitModule,
   ],
 })
 export class SharedModule {}

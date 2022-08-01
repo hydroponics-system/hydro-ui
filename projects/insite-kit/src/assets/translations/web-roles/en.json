@@ -1,8 +1,0 @@
-{
-  "webRoles": {
-    "USER": "User",
-    "SYSTEM_USER": "System User",
-    "DEVELOPER": "Developer",
-    "ADMIN": "Admin"
-  }
-}

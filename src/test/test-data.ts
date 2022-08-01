@@ -1,6 +1,4 @@
-import { AuthToken } from 'projects/insite-kit/src/models/auth-token.model';
-import { WebRole } from 'projects/insite-kit/src/models/common.model';
-import { User } from 'projects/insite-kit/src/models/user.model';
+import { AuthToken, User, WebRole } from 'insite-kit-temp';
 
 class HydroDataObject {
   getUser(): User[] {
