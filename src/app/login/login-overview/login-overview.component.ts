@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from 'insite-kit-temp';
+import { AuthService } from 'insite-kit';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

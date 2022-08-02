@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { curveMonotoneX } from 'd3-shape';
-import { JwtService } from 'insite-kit-temp';
+import { JwtService } from 'insite-kit';
 
 @Component({
   selector: 'app-home',

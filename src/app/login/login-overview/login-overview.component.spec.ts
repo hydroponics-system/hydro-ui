@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { AuthService } from 'insite-kit-temp';
+import { AuthService } from 'insite-kit';
 import { ToastrService } from 'ngx-toastr';
 import { of, throwError } from 'rxjs';
 import { HydroTestBed } from 'src/test/test-bed';

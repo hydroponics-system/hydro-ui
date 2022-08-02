@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'insite-kit-temp';
+import { User } from 'insite-kit';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/service/user-service/user.service';
 
