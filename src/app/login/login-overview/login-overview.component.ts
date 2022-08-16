@@ -35,6 +35,10 @@ export class LoginOverviewComponent implements OnInit {
     });
   }
 
+  // UPDATE TO USE POPUP SERVICE AND NOT TOASTR SERVICE
+  //
+  //
+
   onLoginClick() {
     this.loading = true;
     this.authService
