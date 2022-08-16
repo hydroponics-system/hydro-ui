@@ -14,11 +14,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "types":["jquery"],
+    "lib": ["es2018","dom"],
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
