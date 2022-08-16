@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { AuthService } from 'insite-kit';
-import { ToastrService } from 'ngx-toastr';
+import { AuthService, PopupService } from 'insite-kit';
 import { of, throwError } from 'rxjs';
 import { HydroTestBed } from 'src/test/test-bed';
 import { TestData } from 'src/test/test-data';
@@ -14,7 +13,7 @@ describe('LoginOverviewComponent', () => {
   let fixture: ComponentFixture<LoginOverviewComponent>;
   let authService;
   let router;
-  let toastService;
+  let popupService;
 
   setupTests(async () => HydroTestBed.setup());
 
@@ -24,14 +23,14 @@ describe('LoginOverviewComponent', () => {
 
     authService = TestBed.inject(AuthService);
     router = TestBed.inject(Router);
-    toastService = TestBed.inject(ToastrService);
+    popupService = TestBed.inject(PopupService);
 
     spyOn(authService, 'authenticate').and.returnValue(
       of(TestData.getAuthToken())
     );
 
     spyOn(router, 'navigate');
-    spyOn(toastService, 'error');
+    spyOn(popupService, 'error');
 
     fixture.detectChanges();
   });
@@ -60,7 +59,7 @@ describe('LoginOverviewComponent', () => {
       'testPassword'
     );
     expect(router.navigate).toHaveBeenCalledWith(['/home']);
-    expect(toastService.error).not.toHaveBeenCalled();
+    expect(popupService.error).not.toHaveBeenCalled();
     expect(component.loading).toBeFalsy();
   });
 
@@ -79,7 +78,7 @@ describe('LoginOverviewComponent', () => {
       'testPassword'
     );
     expect(router.navigate).not.toHaveBeenCalled();
-    expect(toastService.error).toHaveBeenCalledWith(
+    expect(popupService.error).toHaveBeenCalledWith(
       'Invalid email or password!'
     );
     expect(component.loading).toBeFalsy();

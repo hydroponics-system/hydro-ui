@@ -3,8 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from 'insite-kit';
-import { ToastrService } from 'ngx-toastr';
+import { AuthService, PopupService } from 'insite-kit';
 
 @Component({
   selector: 'app-login-overview',
@@ -20,8 +19,8 @@ export class LoginOverviewComponent implements OnInit {
   constructor(
     private readonly authService: AuthService,
     private readonly fb: FormBuilder,
-    private readonly toastService: ToastrService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly popupService: PopupService
   ) {}
 
   ngOnInit() {
@@ -35,10 +34,6 @@ export class LoginOverviewComponent implements OnInit {
     });
   }
 
-  // UPDATE TO USE POPUP SERVICE AND NOT TOASTR SERVICE
-  //
-  //
-
   onLoginClick() {
     this.loading = true;
     this.authService
@@ -49,7 +44,7 @@ export class LoginOverviewComponent implements OnInit {
           this.loading = false;
         },
         (err) => {
-          this.toastService.error('Invalid email or password!');
+          this.popupService.error('Invalid email or password!');
           this.loading = false;
         }
       );

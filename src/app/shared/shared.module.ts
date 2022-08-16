@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { InsiteKitModule } from 'insite-kit';
-import { ToastrModule } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from '../app-routing.module';
 
@@ -32,7 +31,6 @@ import { AppRoutingModule } from '../app-routing.module';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule,
     NgxChartsModule,
     FontAwesomeModule,
     InsiteKitModule,

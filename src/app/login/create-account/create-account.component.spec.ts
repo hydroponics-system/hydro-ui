@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { PopupService } from 'insite-kit';
 import { of, throwError } from 'rxjs';
 import { UserService } from 'src/service/user-service/user.service';
 import { HydroTestBed } from 'src/test/test-bed';
@@ -14,7 +14,7 @@ describe('CreateAccountComponent', () => {
   let fixture: ComponentFixture<CreateAccountComponent>;
   let userService;
   let router;
-  let toastService;
+  let popupService;
 
   setupTests(async () => HydroTestBed.setup());
 
@@ -24,12 +24,12 @@ describe('CreateAccountComponent', () => {
 
     userService = TestBed.inject(UserService);
     router = TestBed.inject(Router);
-    toastService = TestBed.inject(ToastrService);
+    popupService = TestBed.inject(PopupService);
 
     spyOn(userService, 'createUser').and.returnValue(of(TestData.getUser()[0]));
     spyOn(router, 'navigate');
-    spyOn(toastService, 'error');
-    spyOn(toastService, 'success');
+    spyOn(popupService, 'error');
+    spyOn(popupService, 'success');
 
     fixture.detectChanges();
   });
@@ -64,7 +64,7 @@ describe('CreateAccountComponent', () => {
       password: 'newPassword',
     });
     expect(router.navigate).toHaveBeenCalledWith(['/login']);
-    expect(toastService.success).toHaveBeenCalledWith(
+    expect(popupService.success).toHaveBeenCalledWith(
       'Account successfully created!'
     );
     expect(component.loading).toBeFalsy();
@@ -83,7 +83,7 @@ describe('CreateAccountComponent', () => {
     TestDOM.click('#createAccountButton');
 
     expect(router.navigate).toHaveBeenCalledWith(['/login']);
-    expect(toastService.error).toHaveBeenCalledWith(
+    expect(popupService.error).toHaveBeenCalledWith(
       'Could not create account at this time. Try again later.'
     );
     expect(component.loading).toBeFalsy();

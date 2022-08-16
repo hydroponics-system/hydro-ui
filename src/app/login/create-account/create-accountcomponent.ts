@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'insite-kit';
-import { ToastrService } from 'ngx-toastr';
+import { PopupService, User } from 'insite-kit';
 import { UserService } from 'src/service/user-service/user.service';
 
 @Component({
@@ -17,7 +16,7 @@ export class CreateAccountComponent implements OnInit {
   constructor(
     private readonly userService: UserService,
     private readonly fb: FormBuilder,
-    private readonly toastService: ToastrService,
+    private readonly popupService: PopupService,
     private readonly router: Router
   ) {}
 
@@ -47,12 +46,12 @@ export class CreateAccountComponent implements OnInit {
     this.userService.createUser(user).subscribe(
       (res) => {
         this.loading = false;
-        this.toastService.success('Account successfully created!');
+        this.popupService.success('Account successfully created!');
         this.router.navigate(['/login']);
       },
       (err) => {
         this.loading = false;
-        this.toastService.error(
+        this.popupService.error(
           'Could not create account at this time. Try again later.'
         );
         this.router.navigate(['/login']);
