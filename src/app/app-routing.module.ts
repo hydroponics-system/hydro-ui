@@ -1,37 +1,60 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'insite-kit';
-import { HomeComponent } from './home/home.component';
-import { CreateAccountComponent } from './login/create-account/create-accountcomponent';
-import { LoginOverviewComponent } from './login/login-overview/login-overview.component';
-import { LoginComponent } from './login/login.component';
-import { UserComponent } from './users/user.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CreateAccountComponent } from './pages/login/create-account/create-accountcomponent';
+import { LoginOverviewComponent } from './pages/login/login-overview/login-overview.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { UserComponent } from './pages/users/user.component';
+import { AuthenticatedLayoutComponent } from './shared/components/authenticated-layout/authenticated-layout.component';
 
 /**
  * Make sure to add back CanActivate on Home
  */
 const routes: Routes = [
+  // Unauthenticated Routes
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
-    canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'overview', pathMatch: 'full' },
-      { path: 'overview', component: LoginOverviewComponent },
-      { path: 'account/create', component: CreateAccountComponent },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      {
+        path: 'login',
+        canActivate: [AuthGuard],
+        component: LoginOverviewComponent,
+      },
+      {
+        path: 'register',
+        canActivate: [AuthGuard],
+        component: CreateAccountComponent,
+      },
     ],
   },
+  // Authenticated Routes
   {
-    path: 'home',
-    component: HomeComponent,
+    path: '',
+    component: AuthenticatedLayoutComponent,
     canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'users',
+        component: UserComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        pathMatch: 'full',
+      },
+    ],
   },
-  {
-    path: 'users',
-    component: UserComponent,
-    canActivate: [AuthGuard],
-  },
-  { path: '**', redirectTo: 'login' },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

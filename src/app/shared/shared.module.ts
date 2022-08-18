@@ -1,39 +1,9 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { InsiteKitModule } from 'insite-kit';
-import { environment } from 'src/environments/environment';
-import { AppRoutingModule } from '../app-routing.module';
+import { BaseInitModule } from 'src/app/common/base-init.module';
+import { AuthenticatedLayoutComponent } from './components/authenticated-layout/authenticated-layout.component';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    RouterModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    FontAwesomeModule,
-    NgxChartsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    InsiteKitModule.forRoot(environment),
-  ],
-  exports: [
-    BrowserModule,
-    RouterModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgxChartsModule,
-    FontAwesomeModule,
-    InsiteKitModule,
-  ],
+  imports: [BaseInitModule],
+  declarations: [AuthenticatedLayoutComponent],
 })
 export class SharedModule {}

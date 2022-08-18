@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-6 col-xs-12">
+    <ik-card [padding]="false">
+      <div class="chart-container">
+        <ngx-charts-bar-vertical
+          [results]="barChartData"
+          [xAxisLabel]="'Products'"
+          [yAxisLabel]="'Sale'"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [gradient]="true"
+          class="bar-chart"
+        >
+        </ngx-charts-bar-vertical>
+      </div>
+    </ik-card>
+  </div>
+  <div class="col-sm-6 col-xs-12">
+    <ik-card [padding]="false">
+      <div class="chart-container">
+        <ngx-charts-line-chart
+          [results]="lineChartData"
+          [xAxisLabel]="'Products'"
+          [yAxisLabel]="'Sale'"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [gradient]="true"
+          [curve]="curve"
+          class="bar-chart"
+        >
+        </ngx-charts-line-chart>
+      </div>
+    </ik-card>
+  </div>
+</div>

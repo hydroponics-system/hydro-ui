@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
+import { BaseInitModule } from 'src/app/common/base-init.module';
 import { HomeComponent } from './home.component';
 
 @NgModule({
-  imports: [SharedModule],
+  imports: [BaseInitModule],
   declarations: [HomeComponent],
 })
 export class HomeModule {}
