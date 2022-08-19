@@ -18,6 +18,7 @@
     "test:headless": "ng test --watch=false --code-coverage --source-map=true --browsers=ChromeHeadless",
     "serve:dev": "ng serve --live-reload --configuration dev",
     "serve:local": "ng serve --live-reload --configuration local",
+    "package:refresh": "rm package-lock.json && npm i",
     "heroku-postbuild": "ng build --configuration ${ENV}",
     "preinstall": "npx npm-force-resolutions"
   },
