@@ -6,6 +6,7 @@
  * @since February 25, 2022
  */
 export const environment = {
+  tag: 'PRODUCTION',
   production: true,
   isLocal: false,
   apiUrl: 'hydro-production-microservice.herokuapp.com',

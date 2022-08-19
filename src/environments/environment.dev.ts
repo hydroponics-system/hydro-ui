@@ -6,6 +6,7 @@
  * @since February 25, 2022
  */
 export const environment = {
+  tag: 'DEVELOPMENT',
   production: true,
   isLocal: false,
   apiUrl: 'hydro-development-microservice.herokuapp.com',
