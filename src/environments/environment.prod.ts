@@ -9,5 +9,5 @@ export const environment = {
   tag: 'PRODUCTION',
   production: true,
   isLocal: false,
-  apiUrl: 'hydro-production-microservice.herokuapp.com',
+  apiUrl: 'hydro-api-microservice.herokuapp.com',
 };
