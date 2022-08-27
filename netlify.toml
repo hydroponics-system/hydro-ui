@@ -1,8 +1,8 @@
 [build]
   command="npm run build"
-  publish="dist"
+  publish="dist/hydro-ui"
 
 [[redirects]]
   from = "/*"
-  to = "/src/index.html"
+  to = "/index.html"
   status = 200
