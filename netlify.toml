@@ -1,8 +1,0 @@
-[build]
-  command="ng build --configuration prod"
-  publish="dist/hydroponics-app"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
