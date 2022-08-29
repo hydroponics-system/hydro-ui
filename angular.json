@@ -124,9 +124,6 @@
             },
             "local": {
               "browserTarget": "hydroponics-app:build:local"
-            },
-            "dev": {
-              "browserTarget": "hydroponics-app:build:dev"
             }
           }
         },

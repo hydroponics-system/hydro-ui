@@ -16,8 +16,6 @@ app.get("/*", function (req, res) {
 let profile = process.env?.ENV ? process.env?.ENV : "local";
 if (profile === "prod") {
   profile = "PRODUCTION";
-} else if (profile === "dev") {
-  profile = "DEVELOPMENT";
 } else {
   profile = "LOCAL";
 }
