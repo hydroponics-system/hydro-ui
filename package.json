@@ -10,6 +10,7 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "e2e": "ng e2e",
     "test": "ng test --code-coverage --source-map=false",
     "test:watch": "ng test --code-coverage --source-map=false --watch",
