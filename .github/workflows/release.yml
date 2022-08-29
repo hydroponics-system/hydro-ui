@@ -1,8 +1,10 @@
+# Will Release Hydro UI to be built. This will only get run when merging to master and if the build passes.
+
 name: Release Version
 
 on:
   workflow_run:
-    workflows: ["Build Production"]
+    workflows: ["Hydro UI Build"]
     types: [completed]
     branches: [master]
 

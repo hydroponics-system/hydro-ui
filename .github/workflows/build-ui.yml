@@ -1,6 +1,6 @@
 # Build UI application.
 
-name: Build Production
+name: Hydro UI Build
 
 on:
   push:
