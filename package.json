@@ -2,7 +2,7 @@
   "name": "hydroponics-app",
   "version": "0.0.0",
   "engines": {
-    "node": ">=16.10.0",
+    "node": ">=16.10.0 <17.0.0",
     "npm": ">=8.15.0"
   },
   "scripts": {
